@@ -1,0 +1,47 @@
+<p>user-table works!</p>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of currentItems">
+      <td>{{ item.id }}</td>
+      <td>{{ item.name }}</td>
+      <td>{{ item.email }}</td>
+      <td>{{ item.phone }}</td>
+    </tr>
+  </tbody>
+</table>
+<div>
+  <button [disabled]="currentPage === 1" (click)="goToFirstPage()">
+    First
+  </button>
+  <button [disabled]="currentPage === 1" (click)="goToPreviousPage()">
+    Previous
+  </button>
+  <ng-container *ngFor="let pageNumber of pageNumbers">
+    <button
+      [class.active]="pageNumber === currentPage"
+      (click)="goToPage(pageNumber)"
+    >
+      {{ pageNumber }}
+    </button>
+  </ng-container>
+  <button
+    [disabled]="currentPage === pageNumbers.length"
+    (click)="goToNextPage()"
+  >
+    Next
+  </button>
+  <button
+    [disabled]="currentPage === pageNumbers.length"
+    (click)="goToLastPage()"
+  >
+    Last
+  </button>
+</div>
