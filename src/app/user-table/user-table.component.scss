@@ -1,0 +1,26 @@
+table,
+th,
+td {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table {
+  min-width: 800px;
+  width: 800px;
+}
+
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+.footer {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  column-gap: 0.5rem;
+  justify-content: center;
+}
