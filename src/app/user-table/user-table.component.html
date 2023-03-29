@@ -1,23 +1,21 @@
-<p>user-table works!</p>
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Phone</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item of currentItems">
-      <td>{{ item.id }}</td>
-      <td>{{ item.name }}</td>
-      <td>{{ item.email }}</td>
-      <td>{{ item.phone }}</td>
-    </tr>
-  </tbody>
+<h1>User Table</h1>
+<table matSort (matSortChange)="sortData($event)">
+  <tr>
+    <th mat-sort-header="id" width="5%">ID</th>
+    <th mat-sort-header="name" width="30%">Name</th>
+    <th mat-sort-header="email" width="40%">Email</th>
+    <th mat-sort-header="phone" width="25%">Phone</th>
+  </tr>
+
+  <tr *ngFor="let item of currentItems">
+    <td>{{ item.id }}</td>
+    <td>{{ item.name }}</td>
+    <td>{{ item.email }}</td>
+    <td>{{ item.phone }}</td>
+  </tr>
 </table>
-<div>
+
+<div class="footer">
   <button [disabled]="currentPage === 1" (click)="goToFirstPage()">
     First
   </button>
